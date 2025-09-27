@@ -75,7 +75,9 @@
   <a href="#" class="btn">Consultar precios</a>
 </div>
 
-<footer>
+
+  </section>  
+  <footer>
   <p><strong>Teléfono:</strong> 3012772987</p>
   <p><strong>Correo:</strong> jardineriaraicesdevida@gmail.com</p>
   <p>Síguenos en: 
@@ -83,16 +85,20 @@
     <a href="#">Facebook - Jardinería Raíces de Vida</a>
   </p>
 </footer>
-
-
-  </section>
-  
+<nav class="menu-superior">
+  <a href="index.html">Inicio</a>
+  <a href="productos.html">Productos</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="consejos.html">Consejos de Jardinería</a>
+  <a href="plantas.html">Plantas Importadas</a>
+</nav>
 <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       background-color: #f5f9f6;
       color: #333;
+      padding-top: 70px;
     }
 
     header {
@@ -191,18 +197,58 @@
 }
 
 footer {
-  background-color: #2e7d32;
+  background-color: #1b5e20;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 1rem;
   margin-top: 30px;
-}
+     }
+     
+  footer a {
+    color: #f2ce2e; 
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-footer a {
-  color: #ffeb3b;
-  text-decoration: none;
-  margin: 0 10px;
-}
+  footer a:hover {
+    color: #f1de34;
+    text-decoration: underline;
+  }
+
+  .footer-content p {
+    margin: 8px 0;
+    font-size: 1rem;
+  }
+
+  .footer-content strong {
+    color: #fff;
+  }
+.menu-superior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #26792a;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.7rem;
+    z-index: 1000;
+  }
+
+  .menu-superior a {
+    background-color: white;
+    color: #333;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  .menu-superior a:hover {
+    background-color: #c8e6c9;
+  }
 
  @media (max-width: 768px) {
     header h1 {
@@ -251,9 +297,7 @@ footer a {
     .btn {
       font-size: 0.85rem;
       padding: 10px; }
-
     }
   </style>
-
 </body>
 </html>
