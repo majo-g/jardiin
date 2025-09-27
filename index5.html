@@ -7,10 +7,16 @@
   <body>
 
   <header>
-    <h1> Catálogo de Plantas Importadas </h1>
-    <p>Explora nuestra selección exclusiva de plantas internacionales</p>
-  </header>
-
+  <nav class="menu-superior">
+    <a href="index.html">Inicio</a>
+    <a href="index2.html">Productos</a>
+    <a href="index3.html">Servicios</a>
+    <a href="index4.html">Consejos de Jardinería</a>
+    <a href="index5.html">Plantas Importadas</a>
+  </nav>
+  <h1> Catálogo de Plantas Importadas </h1>
+  <p>Explora nuestra selección exclusiva de plantas internacionales</p>
+</header>
   <section class="catalogo">
     <div class="planta">
       <img src="https://vivoboreal.com/wp-content/uploads/2017/07/Orquideas-phalaenopsis-vivo-boreal-3.jpg" alt="Orquídea Phalaenopsis">
@@ -101,13 +107,6 @@
     <a href="#">Facebook - Jardinería Raíces de Vida</a>
   </p>
 </footer>
-    <nav class="menu-superior">
-  <a href="index.html">Inicio</a>
-  <a href="index2.html">Productos</a>
-  <a href="index3.html">Servicios</a>
-  <a href="index4.html">Consejos de Jardinería</a>
-  <a href="index5.html">Plantas Importadas</a>
-</nav>
 <style>
     * {
       margin: 0;
@@ -286,6 +285,30 @@
     background-color: #c8e6c9;
   }
 
+     .menu-superior {
+  position: absolute;   
+  top: 1px;          
+  left: 50%;
+  transform: translateX(-50%); 
+  display: flex;
+  gap: 1rem;
+  z-index: 2;    
+  border-radius: 10px;
+}
+
+.menu-superior a {
+  background-color: white;
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.menu-superior a:hover {
+  background-color: #c8e6c9;
+}
   @media (max-width: 900px) {
   header h1 { font-size: 2.2rem; }
   header p { font-size: 1rem; }
@@ -317,6 +340,7 @@
   </head>
   </body>
   </html>
+
 
 
 
