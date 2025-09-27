@@ -163,12 +163,20 @@
     <a href="#">Facebook - Jardinería Raíces de Vida</a>
   </p>
 </footer>
+  <nav class="menu-superior">
+  <a href="index.html">Inicio</a>
+  <a href="productos.html">Productos</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="consejos.html">Consejos de Jardinería</a>
+  <a href="plantas.html">Plantas Importadas</a>
+</nav>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       background-color: #f5f9f6;
       color: #333;
+      padding-top: 70px;
     }
 
     header {
@@ -273,6 +281,34 @@
   .footer-content strong {
     color: #fff;
   }
+
+  .menu-superior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #26792a;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.7rem;
+    z-index: 1000;
+  }
+
+  .menu-superior a {
+    background-color: white;
+    color: #333;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  .menu-superior a:hover {
+    background-color: #c8e6c9;
+  }
+
       @media (max-width: 768px) {
       header h1 {
         font-size: 1.6rem;
@@ -316,4 +352,5 @@
   </style>
 </body>
 </html>
+
 
