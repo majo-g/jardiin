@@ -4,153 +4,286 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consejos de Jardinería</title>
-  
-  <header>
-    <h1>Consejos de Jardinería</h1>
-    <p>Aprende a cuidar tus plantas y hacer crecer tu jardín</p>
-  </header>
-
-  <main>
-    <h2>1. Elige las plantas adecuadas para tu entorno</h2>
-    <p>Antes de comprar plantas, investiga cuáles se adaptan mejor al clima de tu ciudad y al espacio donde las colocarás. Algunas especies necesitan sol directo durante varias horas al día, mientras que otras prefieren ambientes sombreados o semisombra. Si vives en un lugar muy seco, apuesta por cactus o suculentas, y si tu región es húmeda, puedes optar por helechos y plantas tropicales. De esta manera, tus plantas crecerán más fuertes y tendrás menos trabajo en su mantenimiento.</p>
-
-    <h2>2. Prepara bien la tierra antes de sembrar</h2>
-    <p>La tierra es la base de todo jardín saludable. Para lograr que tus plantas reciban los nutrientes necesarios, mezcla tierra común con abono orgánico, compost o humus de lombriz. Esto ayuda a mantener la humedad y a enriquecer el suelo con minerales. También puedes airear la tierra removiéndola con un rastrillo para que las raíces crezcan con facilidad y se oxigenen mejor.</p>
-    <img src="https://lasnieves.es/wp-content/uploads/2023/11/regadera-jardin.jpg">
-
-    <h2>3.Riega con la cantidad justa de agua</h2>
-    <p>Uno de los errores más comunes en la jardinería es el exceso de riego. No todas las plantas requieren la misma cantidad de agua; por eso, revisa siempre la humedad del suelo antes de volver a regar. Si la tierra está seca al tacto, es momento de dar agua. Además, procura regar en las primeras horas de la mañana o al atardecer para evitar la evaporación rápida y aprovechar mejor el agua.</p>
-    
-
-    <h2>4.Asegúrate de que tus plantas reciban la luz necesaria</h2>
-    <p>La luz solar es esencial para la fotosíntesis, pero cada planta tiene diferentes necesidades. Algunas especies, como los cactus, necesitan muchas horas de sol directo, mientras que otras, como las orquídeas, crecen mejor en luz indirecta. Colocar tus plantas en el lugar correcto garantizará que crezcan sanas, florezcan y se desarrollen como deberían.</p>
-    <img src="https://theressa.net/images/articles/5e42c6bd65ac9-image-asset.jpeg" >
-
-    <h2>5. Abona regularmente para mantener la tierra fértil</h2>
-    <p>Aunque la tierra tenga nutrientes al inicio, con el tiempo las plantas los consumen. Por eso, es importante fertilizar al menos una vez al mes, dependiendo de la especie. Usa compost casero, restos de café, cáscaras de huevo trituradas o fertilizantes naturales que no dañen el medio ambiente. Así tus plantas tendrán siempre lo que necesitan para crecer verdes y fuertes.</p>
-
-    <h2>6. Poda para estimular el crecimiento</h2>
-    <p>La poda no solo mantiene tus plantas con un aspecto ordenado, sino que también ayuda a que crezcan mejor. Retira hojas secas, ramas dañadas o flores marchitas, ya que estas partes consumen energía que la planta podría usar para desarrollarse. Además, la poda mejora la circulación del aire entre las ramas y previene la aparición de plagas y enfermedades.</p>
-  </main>
-
-  <footer>
-  <p><strong>Teléfono:</strong> 3012772987</p>
-  <p><strong>Correo:</strong> jardineriaraicesdevida@gmail.com</p>
-  <p>Síguenos en: 
-    <a href="#">Instagram - Jardinería Raíces de Vida</a> | 
-    <a href="#">Facebook - Jardinería Raíces de Vida</a>
-  </p>
-</footer>
-<style>
+  <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       background-color: #f5f9f6;
       color: #333;
       line-height: 1.6;
+      padding-top: 70px;
     }
 
-     header {
-  background-image: url('https://images.squarespace-cdn.com/content/v1/5fae629098d0ea21e2a96879/1606744813429-RUAOCA9E7A3OYNHOTJZ1/Screenshot+2020-11-30+at+13.54.26.png'); 
-  background-size: cover; 
-  background-position: center; 
-  color: rgb(233, 236, 33);
-  text-align: center;
-  padding: 2rem 1rem;
-}
+    /* Menú superior fijo */
+    .menu-superior {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #388E3C;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.8rem;
+      z-index: 1000;
+    }
+    .menu-superior a {
+      background: #fff;
+      color: #2e7d32;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .menu-superior a:hover {
+      background: #c8e6c9;
+    }
 
+    header {
+      background-image: url(https://images.squarespace-cdn.com/content/v1/5fae629098d0ea21e2a96879/1606744813429-RUAOCA9E7A3OYNHOTJZ1/Screenshot+2020-11-30+at+13.54.26.png);
+      background-size: cover;
+      background-position: center;
+      color: rgb(246, 250, 11);
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
-
     header p {
       margin-top: 0.5rem;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
 
     main {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
       padding: 20px;
     }
 
-    h2 {
+    /* Tarjetas de consejos */
+    .consejos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .tarjeta {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .tarjeta h2 {
       color: #2e7d32;
-      margin-top: 30px;
+      font-size: 1.2rem;
+    }
+    .tarjeta img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 0.5rem 0;
+    }
+    .tarjeta p {
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+    .tarjeta a {
+      display: inline-block;
+      text-decoration: none;
+      background: #2e7d32;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .tarjeta a:hover {
+      background: #1b5e20;
     }
 
-    img {
-      max-width: 70%;
+    /* Video grande */
+    .video-consejo {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .video-consejo h2 {
+      color: #1b5e20;
+      margin-bottom: 1rem;
+    }
+    .video-consejo video {
       border-radius: 10px;
-      margin: 15px 0;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     footer {
-  background-color: #1b5e20;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 30px;
-     }
-     
-  footer a {
-    color: #f2ce2e; 
-    text-decoration: none;
+      background-color: #226d26;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 30px;
+    }
+
+    .videos {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  .videos h2 {
+    text-align: center;
+    color: #2e7d32;
+    margin-bottom: 20px;
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .video-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 10px;
+    text-align: center;
+  }
+
+  .video-card p {
+    margin: 10px 0 5px;
     font-weight: bold;
   }
 
-  footer a:hover {
-    color: #f1de34;
-    text-decoration: underline;
+  .video-card span {
+    font-size: 0.9rem;
+    color: #666;
   }
-
-  .footer-content p {
-    margin: 8px 0;
-    font-size: 1rem;
-  }
-
-  .footer-content strong {
-    color: #fff;
-  }
+ 
    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      main {
-        padding: 15px;
-      }
+    .video-grid {
+      grid-template-columns: 1fr;
     }
-
-    @media (max-width: 480px) {
-      header {
-        padding: 1.5rem 1rem;
-      }
-
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      header p {
-        font-size: 0.9rem;
-      }
-
-      h2 {
-        font-size: 1.3rem;
-      }
-    }
+  }
   </style>
+</head>
+<body>
+  <!-- Menú fijo -->
+  <nav class="menu-superior">
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="consejos.html">Consejos</a>
+    <a href="plantas.html">Plantas</a>
+  </nav>
+
+  <header>
+    <h1>Consejos de Jardinería</h1>
+    <p>Aprende a cuidar tus plantas y hacer crecer tu jardín</p>
+  </header>
+
+  <main>
+    <section class="consejos-grid">
+      <div class="tarjeta">
+        <h2>1. Elige las plantas adecuadas</h2>
+        <img src="https://verdecora.es/blog/wp-content/uploads/2024/05/como-elegir-plantas.jpg" alt="Plantas adecuadas">
+        <p>Escoge especies que se adapten a tu clima y espacio.</p>
+    
+      </div>
+
+      <div class="tarjeta">
+        <h2>2. Prepara bien la tierra</h2>
+        <img src="https://blog.bauhaus.es/wp-content/uploads/2024/03/preparar-terreno-para-cesped2.jpg" alt="Tierra fértil">
+        <p>Mezcla tierra con abono orgánico o compost.</p>
+        
+      </div>
+
+      <div class="tarjeta">
+        <h2>3. Riega con la cantidad justa</h2>
+        <img src="https://falconagroalimentaria.com/wp-content/uploads/2025/03/preparar-tierra-huerta.webp" alt="Regando plantas">
+        <p>Revisa la humedad antes de regar.</p>
+        
+      </div>
+
+      <div class="tarjeta">
+        <h2>4. Dale la luz necesaria</h2>
+        <img src="https://verdecora.es/blog/wp-content/uploads/2018/04/preparar-tierra-huerto.jpg" alt="Plantas con luz">
+        <p>Ubica cada especie según sus necesidades de sol.</p>
+       
+      </div>
+
+      <div class="tarjeta">
+        <h2>5. Abona regularmente</h2>
+        <img src="https://agroclan.es/wp-content/uploads/preparar-terreno-para-la-siembra.jpg" alt="Abono natural">
+       <p>Ubica cada especie según sus necesidades de sol.</p>
+       
+      </div>
+
+      <div class="tarjeta">
+        <h2>6. Poda para estimular crecimiento</h2>
+        <img src="https://nuestroshuertos.com/wp-content/uploads/2022/11/jcr-content-scaled.jpeg" alt="Poda de plantas">
+        <p>Quita hojas secas y ramas dañadas.</p>
+       
+      </div>
+
+      
+      <div class="tarjeta">
+        <h2>7. Protege tus plantas de plagas</h2>
+        <img src="https://www.yaencontre.com/noticias/wp-content/uploads/2023/03/abonar-plantas4.jpg" alt="Plantas sin plagas">
+        <p>Usa remedios naturales como ajo o jabón potásico.</p>
+       
+      </div>
+
+      <div class="tarjeta">
+        <h2>8. Aprovecha el agua de lluvia</h2>
+        <img src="https://www.yaencontre.com/noticias/wp-content/uploads/2023/03/abonar-plantas3.jpg" alt="Agua de lluvia">
+        <p>Recolecta agua en recipientes para riego ecológico.</p>
+        
+      </div>
+    </section>
+
+    
+
+<section class="videos">
+  <h2>Videos de Jardinería</h2>
+  <div class="video-grid">
+    
+    <!-- Video 1 -->
+    <div class="video-card">
+      <iframe width="100%" height="300" src="./imagenesAlex/videJardin.mp4" 
+              title="Video de jardinería 1" frameborder="0" allowfullscreen></iframe>
+      <p>Tips de jardinería que debes saber #jardinería</p>
+      <span>51k vistas</span>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-card">
+      <iframe width="100%" height="300" src="./imagenesAlex/jardin2.mp4" 
+              title="Video de jardinería 2" frameborder="0" allowfullscreen></iframe>
+      <p>Consejos para decorar tu jardín creando canteros</p>
+      <span>144k vistas</span>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-card">
+      <iframe width="100%" height="300" src="./imagenesAlex/jardin3.mp4" 
+              title="Video de jardinería 3" frameborder="0" allowfullscreen></iframe>
+      <p>Con estos consejos vas a querer tener geranios en casa</p>
+      <span>490k vistas</span>
+    </div>
+
+  </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Consejos de Jardinería | Hecho con amor</p>
+  </footer>
 </body>
 </html>
-
-
-
-
-
-
-
