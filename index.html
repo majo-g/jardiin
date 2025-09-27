@@ -54,10 +54,14 @@
     </div>
   </section>
 
-  <section class="extra">
-    <h2>¡Nos encargamos de todo por usted!</h2>
-    <p>En nuestra Jardinería Raíces de vida estamos orgullosos de ofrecer paisajes cuidadosamente diseñados para adaptarse a las preferencias de nuestros clientes comerciales, priorizando la sostenibilidad.</p>
-  </section>
+  <footer>
+  <p><strong>Teléfono:</strong> 3012772987</p>
+  <p><strong>Correo:</strong> jardineriaraicesdevida@gmail.com</p>
+  <p>Síguenos en: 
+    <a href="#">Instagram - Jardinería Raíces de Vida</a> | 
+    <a href="#">Facebook - Jardinería Raíces de Vida</a>
+  </p>
+</footer>
 
   <style>
     * {
@@ -160,29 +164,33 @@
     }
     .service-info a:hover { text-decoration: underline; }
 
-    .extra {
-      text-align: center;
-      padding: 50px 20px;
-      background: url("https://previews.123rf.com/images/naddya/naddya1609/naddya160900020/62773222-vector-horizontal-seamless-background-with-autumn-colorful-flowers-apples-berries-and-leaves.jpg") no-repeat center center/cover;
-      position: relative;
-      color: #fff;
-    }
-    .extra::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.4);
-      z-index: 0;
-    }
-    .extra h2, .extra p {
-      position: relative;
-      z-index: 1;
-    }
-    .extra h2 { color: #e3e707; margin-bottom: 20px; font-size: clamp(1.2rem, 3vw, 2rem); }
-    .extra p { font-size: clamp(0.9rem, 2.5vw, 1.1rem); }
+     footer {
+  background-color: #ffbbbb;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 30px;
+     }
+     
+  footer a {
+    color: #27aa03; 
+    text-decoration: none;
+    font-weight: bold;
+  }
 
+  footer a:hover {
+    color: #27aa03;
+    text-decoration: underline;
+  }
 
+  .footer-content p {
+    margin: 8px 0;
+    font-size: 1rem;
+  }
+
+  .footer-content strong {
+    color: #fff;
+  }
     @media (max-width: 480px) {
       .services {
         padding: 20px;
