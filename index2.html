@@ -3,140 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jardinería Raíces de Vida</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Jardinería Raíces de Vida - Productos</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background-color: #f5f9f6;
+      background-color: #f8f9fa;
       color: #333;
       line-height: 1.6;
+      padding-top: 70px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     header {
-      background-image: url(https://images.squarespace-cdn.com/content/v1/5fae629098d0ea21e2a96879/1606744813429-RUAOCA9E7A3OYNHOTJZ1/Screenshot+2020-11-30+at+13.54.26.png);
-      background-size: cover; 
-      background-position: center; 
+      background: linear-gradient(to right, #2e7d32, #4caf50);
       color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      position: relative;
-    }
-
-    .overlay {
-      position: absolute;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
       top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
     }
 
     .header-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    }
-
-    nav {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .menu-superior {
       display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .menu-superior a {
-      color: #2e7d32;
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      margin-left: 10px;
+    }
+
+    .logo-icon {
+      font-size: 2rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
       text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-weight: 600;
-      transition: all 0.3s;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
     }
 
-    .menu-superior a:hover {
-      background-color: #c8e6c9;
-      transform: translateY(-2px);
+    nav ul li a:hover {
+      border-bottom: 2px solid white;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.squarespace-cdn.com/content/v1/5fae629098d0ea21e2a96879/1606744813429-RUAOCA9E7A3OYNHOTJZ1/Screenshot+2020-11-30+at+13.54.26.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #4caf50;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2e7d32;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #2e7d32;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: #4caf50;
+      margin: 10px auto;
     }
 
     .productos {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
+      gap: 2rem;
     }
 
     .card {
       background: white;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-10px);
     }
 
     .card img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
-      transition: transform 0.3s;
-    }
-
-    .card:hover img {
-      transform: scale(1.05);
     }
 
     .card .info {
-      padding: 20px;
+      padding: 1.5rem;
     }
 
     .card h3 {
       margin: 0 0 10px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #2e7d32;
-    }
-
-    .card p {
-      margin: 5px 0;
     }
 
     .precio {
       font-weight: bold;
       color: #388e3c;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      margin: 10px 0;
     }
 
-    .btn {
+    .btn-producto {
       display: inline-block;
       margin-top: 10px;
       padding: 10px 15px;
@@ -153,264 +193,289 @@
       text-align: center;
     }
 
-    .btn:hover {
+    .btn-producto:hover {
       background: #1b5e20;
     }
 
     footer {
       background-color: #1b5e20;
       color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 40px;
+      padding: 3rem 0 1rem;
     }
 
-    footer p {
-      margin: 8px 0;
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
 
-    footer a {
-      color: #f2ce2e;
+    .footer-section h3 {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .footer-section h3:after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background-color: #4caf50;
+      margin-top: 5px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-section ul li a {
+      color: #bdbdbd;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
 
-    footer a:hover {
-      color: #f1de34;
-      text-decoration: underline;
+    .footer-section ul li a:hover {
+      color: white;
     }
 
-    .social-links {
-      margin-top: 15px;
-    }
-
-    .social-links a {
-      margin: 0 10px;
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #bdbdbd;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
-      header h1 {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      nav ul li {
+        margin: 0.5rem;
+      }
+      
+      .hero h2 {
         font-size: 2rem;
       }
-
-      header p {
+      
+      .hero p {
         font-size: 1rem;
-      }
-
-      .productos {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 20px;
-        padding: 20px;
-      }
-
-      .card img {
-        height: 160px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header {
-        padding: 1.5rem 0.5rem;
-      }
-
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      .menu-superior {
-        gap: 0.8rem;
-      }
-
-      .menu-superior a {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-      }
-
-      .productos {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 15px;
-      }
-
-      .card img {
-        height: 180px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="overlay"></div>
-    <div class="header-content">
-      <h1>Jardinería Raíces de Vida</h1>
-      <p>Encuentra todo para tu jardín</p>
+    <div class="container header-content">
+      <div class="logo">
+        <span class="logo-icon">🌿</span>
+        <h1>Jardinería Raíces de Vida</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index2.html">Productos</a></li>
+          <li><a href="index3.html">Servicios</a></li>
+          <li><a href="index4.html">Consejos de Jardinería</a></li>
+          <li><a href="index5.html">Plantas Importadas</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
-
-  <nav>
-    <div class="menu-superior">
-      <a href="index.html">Inicio</a>
-      <a href="index2.html">Productos</a>
-      <a href="index3.html">Servicios</a>
-      <a href="index4.html">Consejos de Jardinería</a>
-      <a href="index5.html">Plantas Importadas</a>
+  <section class="hero">
+    <div class="container">
+      <h2>Nuestros Productos</h2>
+      <p>Encuentra todo lo que necesitas para tu jardín en un solo lugar. Calidad y variedad para tus espacios verdes.</p>
+      <a href="#productos" class="btn">Ver Productos</a>
     </div>
-  </nav>
+  </section>
+  <section id="productos">
+    <div class="container">
+      <h2 class="section-title">Todos Nuestros Productos</h2>
+      <div class="productos">
+        <div class="card">
+          <img src="https://www.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/01/cuidados-de-las-monstera-5.jpg" alt="Plantas de interior">
+          <div class="info">
+            <h3>Planta de Interior</h3>
+            <p class="precio">$25.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-  <section class="productos">
-    <div class="card">
-      <img src="https://www.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/01/cuidados-de-las-monstera-5.jpg" alt="Plantas de interior">
-      <div class="info">
-        <h3>Planta de Interior</h3>
-        <p class="precio">$25.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_962147-MCO81220099329_122024-O.webp" alt="Maceta de barro">
+          <div class="info">
+            <h3>Maceta de Barro</h3>
+            <p class="precio">$15.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://http2.mlstatic.com/D_NQ_NP_962147-MCO81220099329_122024-O.webp" alt="Maceta de barro">
-      <div class="info">
-        <h3>Maceta de Barro</h3>
-        <p class="precio">$15.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://oechsle.vtexassets.com/arquivos/ids/20955474/1--4-.jpg?v=638798172985470000" alt="Set de herramientas">
+          <div class="info">
+            <h3>Set de Herramientas</h3>
+            <p class="precio">$40.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://oechsle.vtexassets.com/arquivos/ids/20955474/1--4-.jpg?v=638798172985470000" alt="Set de herramientas">
-      <div class="info">
-        <h3>Set de Herramientas</h3>
-        <p class="precio">$40.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_993074-CBT83591495045_042025-O.webp" alt="Rastrillo de mano">
+          <div class="info">
+            <h3>Rastrillo de Mano</h3>
+            <p class="precio">$12.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://http2.mlstatic.com/D_NQ_NP_993074-CBT83591495045_042025-O.webp" alt="Rastrillo de mano">
-      <div class="info">
-        <h3>Rastrillo de Mano</h3>
-        <p class="precio">$12.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://comercialmida.es/cdn/shop/products/flower-mezcla-semillas-flores-jardines-CM-0000003933.png?v=1610978036" alt="Semillas de flores">
+          <div class="info">
+            <h3>Semillas de Flores</h3>
+            <p class="precio">$8.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://comercialmida.es/cdn/shop/products/flower-mezcla-semillas-flores-jardines-CM-0000003933.png?v=1610978036" alt="Semillas de flores">
-      <div class="info">
-        <h3>Semillas de Flores</h3>
-        <p class="precio">$8.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://media.falabella.com/sodimacCO/899264/public" alt="Regadera metálica">
+          <div class="info">
+            <h3>Regadera Metálica</h3>
+            <p class="precio">$30.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://media.falabella.com/sodimacCO/899264/public" alt="Regadera metálica">
-      <div class="info">
-        <h3>Regadera Metálica</h3>
-        <p class="precio">$30.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://olimpica.vtexassets.com/arquivos/ids/613936-800-450?v=637626518295100000&width=800&height=450&aspect=true" alt="Abono orgánico">
+          <div class="info">
+            <h3>Abono Orgánico</h3>
+            <p class="precio">$18.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://olimpica.vtexassets.com/arquivos/ids/613936-800-450?v=637626518295100000&width=800&height=450&aspect=true" alt="Abono orgánico">
-      <div class="info">
-        <h3>Abono Orgánico</h3>
-        <p class="precio">$18.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://ferreteriavidri.com/images/items/large/164511.jpg" alt="Guantes de jardinería">
+          <div class="info">
+            <h3>Guantes de Jardinería</h3>
+            <p class="precio">$10.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://ferreteriavidri.com/images/items/large/164511.jpg" alt="Guantes de jardinería">
-      <div class="info">
-        <h3>Guantes de Jardinería</h3>
-        <p class="precio">$10.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/I/41ludHYYvOL._UF894,1000_QL80_.jpg" alt="Maceta decorativa">
+          <div class="info">
+            <h3>Maceta Decorativa</h3>
+            <p class="precio">$22.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/41ludHYYvOL._UF894,1000_QL80_.jpg" alt="Maceta decorativa">
-      <div class="info">
-        <h3>Maceta Decorativa</h3>
-        <p class="precio">$22.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://embargosalobestia.vtexassets.com/arquivos/ids/460791-1200-1600?v=638038730780170000&width=1200&height=1600&aspect=true" alt="Manguera de riego">
+          <div class="info">
+            <h3>Manguera de Riego</h3>
+            <p class="precio">$35.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://embargosalobestia.vtexassets.com/arquivos/ids/460791-1200-1600?v=638038730780170000&width=1200&height=1600&aspect=true" alt="Manguera de riego">
-      <div class="info">
-        <h3>Manguera de Riego</h3>
-        <p class="precio">$35.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://ecommerce.macho.com.co/backend/admin/backend/web/archivosDelCliente/items/images/20220818155741-CARRETILLAS-ROBUSTA-CARRET-ROBUSTA-ECOLO-NEUM-400-8-14202208181557417032.jpg" alt="Carretilla">
+          <div class="info">
+            <h3>Carretilla</h3>
+            <p class="precio">$120.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://ecommerce.macho.com.co/backend/admin/backend/web/archivosDelCliente/items/images/20220818155741-CARRETILLAS-ROBUSTA-CARRET-ROBUSTA-ECOLO-NEUM-400-8-14202208181557417032.jpg" alt="Carretilla">
-      <div class="info">
-        <h3>Carretilla</h3>
-        <p class="precio">$120.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://tramontinaco.vtexassets.com/arquivos/ids/210655/78304511PNM001B.png?v=638737839531930000" alt="Tijeras de podar">
+          <div class="info">
+            <h3>Tijeras de Podar</h3>
+            <p class="precio">$28.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://tramontinaco.vtexassets.com/arquivos/ids/210655/78304511PNM001B.png?v=638737839531930000" alt="Tijeras de podar">
-      <div class="info">
-        <h3>Tijeras de Podar</h3>
-        <p class="precio">$28.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/I/51LGQyIMLHL._UF1000,1000_QL80_.jpg" alt="Lámparas solares para jardín">
+          <div class="info">
+            <h3>Lámparas Solares</h3>
+            <p class="precio">$45.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/51LGQyIMLHL._UF1000,1000_QL80_.jpg" alt="Lámparas solares para jardín">
-      <div class="info">
-        <h3>Lámparas Solares</h3>
-        <p class="precio">$45.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://www.idmarket.com/26786-product_main/cesped-artificial-1x10-m-30-mm-espesor-para-jardin-y-balcon.jpg" alt="Césped artificial">
+          <div class="info">
+            <h3>Césped Artificial</h3>
+            <p class="precio">$95.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://www.idmarket.com/26786-product_main/cesped-artificial-1x10-m-30-mm-espesor-para-jardin-y-balcon.jpg" alt="Césped artificial">
-      <div class="info">
-        <h3>Césped Artificial</h3>
-        <p class="precio">$95.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
+        <div class="card">
+          <img src="https://manuals.plus/wp-content/uploads/2022/11/FCMP-OUTDOOR-IM-4000-Tumbling-Composter.jpg" alt="Compostera">
+          <div class="info">
+            <h3>Compostera</h3>
+            <p class="precio">$150.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
 
-    <div class="card">
-      <img src="https://manuals.plus/wp-content/uploads/2022/11/FCMP-OUTDOOR-IM-4000-Tumbling-Composter.jpg" alt="Compostera">
-      <div class="info">
-        <h3>Compostera</h3>
-        <p class="precio">$150.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://i0.wp.com/cuarzodecohogar.cl/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-31-at-10.16.40-PM.jpeg?fit=800%2C800&ssl=1" alt="Piedras decorativas">
-      <div class="info">
-        <h3>Piedras Decorativas</h3>
-        <p class="precio">$12.000</p>
-        <a href="#" class="btn">Agregar al carrito</a>
+        <div class="card">
+          <img src="https://i0.wp.com/cuarzodecohogar.cl/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-31-at-10.16.40-PM.jpeg?fit=800%2C800&ssl=1" alt="Piedras decorativas">
+          <div class="info">
+            <h3>Piedras Decorativas</h3>
+            <p class="precio">$12.000</p>
+            <a href="#" class="btn-producto">Agregar al carrito</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
   <footer>
-    <p><strong>Teléfono:</strong> 3012772987</p>
-    <p><strong>Correo:</strong> jardineriaraicesdevida@gmail.com</p>
-    <div class="social-links">
-      <p>Síguenos en:</p>
-      <a href="#">Instagram - Jardinería Raíces de Vida</a> | 
-      <a href="#">Facebook - Jardinería Raíces de Vida</a>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Jardinería Raíces de Vida</h3>
+          <p>Tu partner de confianza para crear y mantener el jardín de tus sueños.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <ul>
+            <li>📞 Tel: 3012772987</li>
+            <li>✉️ Email: jardineriaraicesdevida@gmail.com</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <ul>
+            <li><a href="#">Instagram - Jardinería Raíces de Vida</a></li>
+            <li><a href="#">Facebook - Jardinería Raíces de Vida</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 Jardinería Raíces de Vida. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
 </body>
